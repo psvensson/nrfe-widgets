@@ -24,6 +24,7 @@
     "tests"
   ],
   "dependencies": {
+    "mustache.js": "mustache#~2.2.0",
     "requirejs": "~2.1.22"
   }
 }
