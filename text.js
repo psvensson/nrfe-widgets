@@ -1,6 +1,6 @@
 define("text",	function()
 {
-	return function (def, parent)
+	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
 		node.className = "mdl-cell mdl-cell--4-col mdl-cell--stretch";
@@ -9,5 +9,7 @@ define("text",	function()
 		node.innerHTML = def.text;
 		return node;
 
-	}
+	};
+	fn.name = "text";
+	return fn;
 });

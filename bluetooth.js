@@ -1,6 +1,6 @@
 define("bluetooth",	function()
 {
-	return function (def, parent)
+	var fn = function (def, parent)
 	{
 		def.in = function(msg)
 		{
@@ -21,5 +21,7 @@ define("bluetooth",	function()
 				});
 			}
 		};
-	}
+	};
+	fn._name = "bluetooth";
+	return fn;
 });

@@ -1,6 +1,6 @@
 define("template",	function()
 {
-	return function (def, parent)
+	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
 		//node.innerHTML = "fooz";
@@ -18,5 +18,7 @@ define("template",	function()
 		console.log('---- creating template '+def.name);
 		console.dir(node);
 		return node;
-	}
+	};
+	fn._name = "template";
+	return fn;
 });

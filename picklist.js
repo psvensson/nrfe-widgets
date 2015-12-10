@@ -1,6 +1,6 @@
 define("picklist",	function()
 {
-	return function (def, parent)
+	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
 		node.className = "mdl-cell mdl-cell--4-col mdl-cell--stretch";
@@ -65,5 +65,7 @@ define("picklist",	function()
 		//-----------------------
 		node.appendChild(table);
 		return node;
-	}
+	};
+	fn._name = "picklist";
+	return fn;
 });

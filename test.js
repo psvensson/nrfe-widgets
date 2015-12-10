@@ -3,10 +3,15 @@ requirejs.config(
 	baseUrl: '.'
 });
 
+var modules = [ 'page', 'bleservices','bluetooth','button','cdbattery','cdgeolocation',
+	'cdvibration','event','fefunction','image','input','picklist','section',
+	'template','text'];
 // Start the main app logic.
-requirejs(['page'],
-	function(page)
+requirejs(modules, function(page, bleservices,bluetooth,button,cdbattery,cdgeolocation,
+	cdvibration,event,fefunction,image,input,picklist,section,
+	template,text)
 	{
-		console.log('page is');
-		console.dir(page);
+		console.log('loaded modules are');
+		console.dir(arguments);
+
 	});

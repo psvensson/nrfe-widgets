@@ -1,6 +1,6 @@
-define("function",	function()
+define("fefunction",	function()
 {
-	return function (def, parent)
+	var fn = function (def, parent)
 	{
 		def.in = function(msg)
 		{
@@ -8,5 +8,7 @@ define("function",	function()
 			var rv = func(msg);
 			def.out(rv);
 		};
-	}
+	};
+	fn._name = "fefunction";
+	return fn;
 });

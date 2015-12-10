@@ -1,6 +1,6 @@
 define("page",	function()
 	{
-		return function(def, parent)
+		var fn = function(def, parent)
 		{
 			var node = document.createElement('div');
 			node.className="mdl-grid";
@@ -9,6 +9,8 @@ define("page",	function()
 			node.style.height = "100%";
 			node.style.flexDirection = def.direction || 'col';
 			return node;
-		}
+		};
+		fn._name = "page";
+		return fn;
 	}
 );

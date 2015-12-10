@@ -1,6 +1,6 @@
 define("cdgeolocation",	function()
 {
-	return function (def, parent)
+	var fn = function (def, parent)
 	{
 		var onSuccess = function(position)
 		{
@@ -14,5 +14,7 @@ define("cdgeolocation",	function()
 		{
 			navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		}
-	}
+	};
+	fn._name = "cdgeolocation";
+	return fn;
 });

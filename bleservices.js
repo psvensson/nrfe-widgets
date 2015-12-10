@@ -1,6 +1,6 @@
 define("bleservices",	function()
 {
-	return function (def, parent)
+	var fn = function (def, parent)
 	{
 		def.in = function(msg)
 		{
@@ -23,5 +23,7 @@ define("bleservices",	function()
 				def.out({payload: {error:'connect error: ' + errorCode}});
 			});
 		};
-	}
+	};
+	fn._name = "bleservices";
+	return fn;
 });

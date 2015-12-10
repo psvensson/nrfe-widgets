@@ -1,6 +1,6 @@
-define("section",	function()
+define("button",	function()
 	{
-		return function(def, parent)
+		var fn = function(def, parent)
 		{
 			var node = document.createElement('button');
 			def.node = node;
@@ -16,6 +16,8 @@ define("section",	function()
 			};
 
 			return node;
-		}
+		};
+		fn._name = "button";
+		return fn;
 	}
 );
