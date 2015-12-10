@@ -1,4 +1,4 @@
-define("event",	function()
+define(function()
 {
 	var fn = function (def, parent)
 	{

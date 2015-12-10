@@ -1,4 +1,4 @@
-define("bleservices",	function()
+define(function()
 {
 	var fn = function (def, parent)
 	{

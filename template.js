@@ -1,4 +1,4 @@
-define("template",	function()
+define(function()
 {
 	var fn = function (def, parent)
 	{

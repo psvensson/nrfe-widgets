@@ -1,4 +1,4 @@
-define("section",	function()
+define(function()
 	{
 		var fn = function(def, parent)
 		{
