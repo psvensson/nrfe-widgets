@@ -1,4 +1,4 @@
-define(function()
+define(['Mustache'], function(Mustache)
 {
 	var fn = function (def, parent)
 	{
