@@ -1,0 +1,19 @@
+{"widgets":
+  [
+    "page",
+    "bleservices",
+    "bluetooth",
+    "button",
+    "cdbattery",
+    "cdgeolocation",
+    "cdvibration",
+    "event",
+    "function",
+    "image",
+    "input",
+    "picklist",
+    "section",
+    "template",
+    "text"
+  ]
+}

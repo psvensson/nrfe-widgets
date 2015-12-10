@@ -1,4 +1,4 @@
-define("fefunction",	function()
+define("function",	function()
 {
 	var fn = function (def, parent)
 	{
@@ -9,6 +9,6 @@ define("fefunction",	function()
 			def.out(rv);
 		};
 	};
-	fn._name = "fefunction";
+	fn._name = "function";
 	return fn;
 });

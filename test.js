@@ -4,11 +4,11 @@ requirejs.config(
 });
 
 var modules = [ 'page', 'bleservices','bluetooth','button','cdbattery','cdgeolocation',
-	'cdvibration','event','fefunction','image','input','picklist','section',
+	'cdvibration','event','function','image','input','picklist','section',
 	'template','text'];
 // Start the main app logic.
 requirejs(modules, function(page, bleservices,bluetooth,button,cdbattery,cdgeolocation,
-	cdvibration,event,fefunction,image,input,picklist,section,
+	cdvibration,event,_function,image,input,picklist,section,
 	template,text)
 	{
 		console.log('loaded modules are');
