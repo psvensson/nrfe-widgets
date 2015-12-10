@@ -1,4 +1,4 @@
-define("text",	function()
+define("html",	function()
 {
 	var fn = function (def, parent)
 	{
@@ -10,6 +10,6 @@ define("text",	function()
 		return node;
 
 	};
-	fn.name = "text";
+	fn.name = "html";
 	return fn;
 });
