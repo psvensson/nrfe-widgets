@@ -4,7 +4,7 @@ define(function()
 	{
 		var node = document.createElement('div');
 		node.className = "mdl-cell mdl-cell--4-col mdl-cell--stretch";
-		node.style.marginLeft = "0";
+		//node.style.marginLeft = "0";
 		//node.style = "container: 'flex', flexDirection: "+def.direction;
 		console.log(JSON.stringify(def));
 
