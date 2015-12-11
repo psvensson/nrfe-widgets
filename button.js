@@ -6,6 +6,7 @@ define(function()
 			def.node = node;
 
 			node.className = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent";
+			node.style.width = "100%";
 			node.innerHTML = def.name;
 
 			def.in = function(msg)
