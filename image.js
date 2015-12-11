@@ -8,7 +8,7 @@ define(function()
 		node.setAttribute('style', def.style);
 		node.appendChild(img);
 		//node.style = "container: 'flex', flexDirection: "+def.direction;
-		console.log('settings img.src to '+def.image);
+		console.log('settings img.src to '+def.image+' and style '+def.style);
 		img.src = def.image;
 		console.log(JSON.stringify(def));
 		return node;
