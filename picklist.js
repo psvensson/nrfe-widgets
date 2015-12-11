@@ -13,7 +13,14 @@ define(function()
 
 		var table = document.createElement('table');
 		table.className = "mdl-data-table mdl-js-data-table  mdl-shadow--2dp";
-		table.style.width = "100%";
+		if(def.style)
+		{
+			table.setAttribute('style', def.style);
+		}
+		else
+		{
+			table.style.width = "100%";
+		}
 
 		var thead = document.createElement('thead');
 		table.appendChild(thead);
