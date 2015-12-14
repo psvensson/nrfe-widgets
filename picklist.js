@@ -19,6 +19,7 @@ define(function()
 		}
 		else
 		{
+			
 			node.style.width = "100%";
 			node.style.maxHeight = "300px";
 			node.style.overflowY = "scroll";
