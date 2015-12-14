@@ -1,5 +1,4 @@
-define(function()
-{
+
 	var fn = function (def, parent)
 	{
 		def.in = function (msg)
@@ -12,6 +11,4 @@ define(function()
 		};
 
 	};
-	fn._name = "event";
-	return fn;
-});
+	module.exports = fn;

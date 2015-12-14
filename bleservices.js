@@ -1,5 +1,4 @@
-define(function()
-{
+
 	var fn = function (def, parent)
 	{
 		def.in = function(msg)
@@ -27,6 +26,4 @@ define(function()
 			}
 		};
 	};
-	fn._name = "bleservices";
-	return fn;
-});
+	module.exports = fn;

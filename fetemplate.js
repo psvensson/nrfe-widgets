@@ -1,5 +1,4 @@
-define(['Mustache'], function(Mustache)
-{
+
 	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
@@ -19,6 +18,4 @@ define(['Mustache'], function(Mustache)
 		console.dir(node);
 		return node;
 	};
-	fn._name = "template";
-	return fn;
-});
+	module.exports = fn;

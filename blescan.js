@@ -1,5 +1,4 @@
-define(function()
-{
+
 	var fn = function (def, parent)
 	{
 		def.in = function(msg)
@@ -22,6 +21,4 @@ define(function()
 			}
 		};
 	};
-	fn._name = "blescan";
-	return fn;
-});
+	module.exports = fn;

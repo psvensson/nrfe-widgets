@@ -1,5 +1,4 @@
-define(function()
-{
+
 	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
@@ -13,6 +12,4 @@ define(function()
 		console.log(JSON.stringify(def));
 		return node;
 	}
-	fn._name = "image";
-	return fn;
-});
+	module.exports = fn;

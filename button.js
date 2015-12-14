@@ -1,5 +1,4 @@
-define(function()
-	{
+
 		var fn = function(def, parent)
 		{
 			var node = document.createElement('button');
@@ -18,7 +17,4 @@ define(function()
 
 			return node;
 		};
-		fn._name = "button";
-		return fn;
-	}
-);
+		module.exports = fn;

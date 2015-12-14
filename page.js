@@ -1,5 +1,4 @@
-define(function()
-	{
+
 		var fn = function(def, parent)
 		{
 			var node = document.createElement('div');
@@ -10,7 +9,4 @@ define(function()
 			node.style.flexDirection = def.direction || 'col';
 			return node;
 		};
-		fn._name = "page";
-		return fn;
-	}
-);
+		module.exports = fn;

@@ -1,5 +1,4 @@
-define(function()
-{
+
 	var fn = function (def, parent)
 	{
 		window.addEventListener("batterystatus", function(info)
@@ -15,6 +14,4 @@ define(function()
 			def.out({payload: info});
 		}, false);
 	};
-	fn._name = "cdbattery";
-	return fn;
-});
+	module.exports = fn;

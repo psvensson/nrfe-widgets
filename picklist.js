@@ -1,5 +1,4 @@
-define(function()
-{
+
 	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
@@ -19,9 +18,9 @@ define(function()
 		}
 		else
 		{
-			
+
 			node.style.width = "100%";
-			node.style.maxHeight = "300px";
+			node.style.maxHeight = "200px";
 			node.style.overflowY = "scroll";
 		}
 
@@ -76,6 +75,4 @@ define(function()
 		node.appendChild(table);
 		return node;
 	};
-	fn._name = "picklist";
-	return fn;
-});
+	module.exports = fn;

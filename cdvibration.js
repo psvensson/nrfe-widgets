@@ -1,5 +1,4 @@
-define(function()
-{
+
 	var fn = function (def, parent)
 	{
 		def.in = function(msg)
@@ -7,6 +6,4 @@ define(function()
 			navigator.vibrate(parseInt(def.vibration));
 		}
 	};
-	fn._name = "cdvibration";
-	return fn;
-});
+	module.exports = fn;
