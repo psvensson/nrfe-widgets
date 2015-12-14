@@ -313,4 +313,25 @@
 			return node;
 		};
 		module.exports = fn;
-},{}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
+},{}],17:[function(require,module,exports){
+
+var widgets =
+  [
+    "nrfe-widgets/page",
+    "nrfe-widgets/bleservices",
+    "nrfe-widgets/blescan",
+    "nrfe-widgets/button",
+    "nrfe-widgets/cdbattery",
+    "nrfe-widgets/cdgeolocation",
+    "nrfe-widgets/cdvibration",
+    "nrfe-widgets/event",
+    "nrfe-widgets/fefunction",
+    "nrfe-widgets/image",
+    "nrfe-widgets/input",
+    "nrfe-widgets/picklist",
+    "nrfe-widgets/section",
+    "nrfe-widgets/fetemplate",
+    "nrfe-widgets/html"
+  ]
+modules.exports = widgets
+},{}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]);
