@@ -3,7 +3,7 @@
   [
     "nrfe-widgets/page",
     "nrfe-widgets/bleservices",
-    "nrfe-widgets/bluetooth",
+    "nrfe-widgets/blescan",
     "nrfe-widgets/button",
     "nrfe-widgets/cdbattery",
     "nrfe-widgets/cdgeolocation",
