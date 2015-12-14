@@ -19,9 +19,9 @@ define(function()
 		}
 		else
 		{
-			table.style.width = "100%";
-			table.style.maxHeight = "300px";
-			table.style.overflowY = "scroll";
+			node.style.width = "100%";
+			node.style.maxHeight = "300px";
+			node.style.overflowY = "scroll";
 		}
 
 		var thead = document.createElement('thead');
