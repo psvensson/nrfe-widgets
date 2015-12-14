@@ -4,13 +4,13 @@ define(function()
 	{
 		def.in = function(msg)
 		{
-			if(def.scanning)
+			if(def.scanning && evothings && evothings.ble)
 			{
 				console.log('stopping scanning')
 				evothings.ble.stopScan();
 				def.scanning = false;
 			}
-			else
+			else if (evothings && evothings.ble)
 			{
 				console.log('starting scanning')
 				def.scanning = true;
@@ -22,6 +22,6 @@ define(function()
 			}
 		};
 	};
-	fn._name = "bluetooth";
+	fn._name = "blescan";
 	return fn;
 });
