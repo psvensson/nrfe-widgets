@@ -15,11 +15,13 @@ define(function()
 		table.className = "mdl-data-table mdl-js-data-table  mdl-shadow--2dp";
 		if(def.style)
 		{
-			table.setAttribute('style', def.style);
+			node.setAttribute('style', def.style);
 		}
 		else
 		{
 			table.style.width = "100%";
+			table.style.maxHeight = "300px";
+			table.style.overflowY = "scroll";
 		}
 
 		var thead = document.createElement('thead');
