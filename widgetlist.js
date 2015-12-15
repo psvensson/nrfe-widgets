@@ -1,20 +1,20 @@
 
 var widgets =
-  [
-    "nrfe-widgets/page",
-    "nrfe-widgets/bleservices",
-    "nrfe-widgets/blescan",
-    "nrfe-widgets/button",
-    "nrfe-widgets/cdbattery",
-    "nrfe-widgets/cdgeolocation",
-    "nrfe-widgets/cdvibration",
-    "nrfe-widgets/event",
-    "nrfe-widgets/fefunction",
-    "nrfe-widgets/image",
-    "nrfe-widgets/input",
-    "nrfe-widgets/picklist",
-    "nrfe-widgets/section",
-    "nrfe-widgets/fetemplate",
-    "nrfe-widgets/html"
-  ]
-modules.exports = widgets
+{
+	page: require("./page"),
+	bleservices: require("./bleservices"),
+	blescan: require("./blescan"),
+	button: require("./button"),
+	cdbattery: require("./cdbattery"),
+	cdgeolocation: require("./cdgeolocation"),
+	cdvibration: require("./cdvibration"),
+	event: require("./event"),
+	fefunction: require("./fefunction"),
+	image: require("./image"),
+	input: require("./input"),
+	picklist: require("./picklist"),
+	section: require("./section"),
+	fetemplate: require("./fetemplate"),
+	html: require("./html")
+}
+module.exports = widgets
