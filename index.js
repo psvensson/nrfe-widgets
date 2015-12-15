@@ -248,6 +248,7 @@
 			node.style.width = "100%";
 			node.style.maxHeight = "200px";
 			node.style.overflowY = "scroll";
+			node.style.margin = "0";
 		}
 
 		var thead = document.createElement('thead');
