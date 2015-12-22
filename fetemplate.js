@@ -1,5 +1,4 @@
-define("template",	function()
-{
+
 	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
@@ -19,6 +18,4 @@ define("template",	function()
 		console.dir(node);
 		return node;
 	};
-	fn._name = "template";
-	return fn;
-});
+	module.exports = fn;

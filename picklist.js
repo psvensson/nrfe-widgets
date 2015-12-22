@@ -1,10 +1,9 @@
-define("picklist",	function()
-{
+
 	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
 		node.className = "mdl-cell mdl-cell--4-col mdl-cell--stretch";
-		node.style.marginLeft = "0";
+		//node.style.marginLeft = "0";
 		//node.style = "container: 'flex', flexDirection: "+def.direction;
 		console.log(JSON.stringify(def));
 
@@ -13,7 +12,18 @@ define("picklist",	function()
 
 		var table = document.createElement('table');
 		table.className = "mdl-data-table mdl-js-data-table  mdl-shadow--2dp";
-		table.style.width = "100%";
+		if(def.style)
+		{
+			node.setAttribute('style', def.style);
+		}
+		else
+		{
+
+			node.style.width = "100%";
+			node.style.maxHeight = "200px";
+			node.style.overflowY = "scroll";
+			node.style.margin = "0";
+		}
 
 		var thead = document.createElement('thead');
 		table.appendChild(thead);
@@ -66,6 +76,4 @@ define("picklist",	function()
 		node.appendChild(table);
 		return node;
 	};
-	fn._name = "picklist";
-	return fn;
-});
+	module.exports = fn;

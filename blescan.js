@@ -1,16 +1,15 @@
-define("bluetooth",	function()
-{
+
 	var fn = function (def, parent)
 	{
 		def.in = function(msg)
 		{
-			if(def.scanning)
+			if(def.scanning && evothings && evothings.ble)
 			{
 				console.log('stopping scanning')
 				evothings.ble.stopScan();
 				def.scanning = false;
 			}
-			else
+			else if (evothings && evothings.ble)
 			{
 				console.log('starting scanning')
 				def.scanning = true;
@@ -22,6 +21,4 @@ define("bluetooth",	function()
 			}
 		};
 	};
-	fn._name = "bluetooth";
-	return fn;
-});
+	module.exports = fn;

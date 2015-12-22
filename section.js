@@ -1,5 +1,4 @@
-define("section",	function()
-	{
+
 		var fn = function(def, parent)
 		{
 			var node = document.createElement('div');
@@ -8,7 +7,4 @@ define("section",	function()
 			console.log('section style = '+def.style)
 			return node;
 		};
-		fn._name = "section";
-		return fn;
-	}
-);
+		module.exports = fn;

@@ -1,5 +1,4 @@
-define("cdgeolocation",	function()
-{
+
 	var fn = function (def, parent)
 	{
 		var onSuccess = function(position)
@@ -15,6 +14,4 @@ define("cdgeolocation",	function()
 			navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		}
 	};
-	fn._name = "cdgeolocation";
-	return fn;
-});
+	module.exports = fn;

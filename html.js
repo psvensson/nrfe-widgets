@@ -1,5 +1,4 @@
-define("html",	function()
-{
+
 	var fn = function (def, parent)
 	{
 		var node = document.createElement('div');
@@ -10,6 +9,4 @@ define("html",	function()
 		return node;
 
 	};
-	fn.name = "html";
-	return fn;
-});
+	module.exports = fn;
