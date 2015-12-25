@@ -4,6 +4,7 @@ var widgets =
 	page: require("./page"),
 	bleservices: require("./bleservices"),
 	blecharacteristics: require("./blecharacteristics"),
+	blereadcharacteristic: require("./blereadcharacteristic"),
 	bledesccriptors: require("./bledescriptors"),
 	blescan: require("./blescan"),
 	button: require("./button"),

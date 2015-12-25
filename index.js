@@ -69,7 +69,7 @@ module.exports = fn;
 },{}],4:[function(require,module,exports){
 var fn = function (def, parent)
 {
-  console.log('ble read charactersitcis instantiated');
+  console.log('============================================ble read charactersitcis instantiated');
   def.in = function(msg)
   {
     var deviceHandle = msg.payload.device
@@ -485,6 +485,7 @@ var widgets =
 	page: require("./page"),
 	bleservices: require("./bleservices"),
 	blecharacteristics: require("./blecharacteristics"),
+	blereadcharacteristic: require("./blereadcharacteristic"),
 	bledesccriptors: require("./bledescriptors"),
 	blescan: require("./blescan"),
 	button: require("./button"),
@@ -502,5 +503,5 @@ var widgets =
 	tisensor: require('./tisensor')
 }
 module.exports = widgets
-},{"./blecharacteristics":1,"./bledescriptors":3,"./blescan":6,"./bleservices":7,"./button":8,"./cdbattery":9,"./cdgeolocation":10,"./cdvibration":11,"./event":12,"./fefunction":13,"./fetemplate":14,"./html":15,"./image":16,"./input":18,"./page":19,"./picklist":20,"./section":21,"./tisensor":23}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24])(24)
+},{"./blecharacteristics":1,"./bledescriptors":3,"./blereadcharacteristic":4,"./blescan":6,"./bleservices":7,"./button":8,"./cdbattery":9,"./cdgeolocation":10,"./cdvibration":11,"./event":12,"./fefunction":13,"./fetemplate":14,"./html":15,"./image":16,"./input":18,"./page":19,"./picklist":20,"./section":21,"./tisensor":23}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24])(24)
 });
