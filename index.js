@@ -19,7 +19,7 @@ var fn = function (def, parent)
             ch.device = deviceHandle
             ch.service = serviceHandle
           })
-          def.out({payload: {caracteristics: characteristics}})
+          def.out({payload: {characteristics: characteristics}})
         })
     }
   };
