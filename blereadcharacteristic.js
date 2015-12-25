@@ -1,5 +1,6 @@
 var fn = function (def, parent)
 {
+  console.log('ble read charactersitcis instantiated');
   def.in = function(msg)
   {
     var deviceHandle = msg.payload.device
