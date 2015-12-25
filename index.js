@@ -1,4 +1,119 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.nrfeWidgets = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var fn = function (def, parent)
+{
+  def.in = function(msg)
+  {
+    var deviceHandle = msg.payload.device
+    var serviceHandle = msg.payload.service
+    if(deviceHandle && serviceHandle && evothings && evothings.ble)
+    {
+      evothings.ble.characteristics(
+        deviceHandle,
+        serviceHandle,
+        function(characteristics)
+        {
+          def.out({payload: {caracteristics: characteristics}})
+        })
+    }
+  };
+};
+module.exports = fn;
+},{}],2:[function(require,module,exports){
+var fn = function (def, parent)
+{
+  def.in = function(msg)
+  {
+    var deviceHandle = msg.payload.device
+    var characteristicHandle = msg.payload.characteristic
+    var rv = undefined
+    if(deviceHandle && characteristicHandle && evothings && evothings.ble)
+    {
+      evothings.ble.descriptors(
+        deviceHandle,
+        characteristicHandle,
+        function(descriptors)
+        {
+          def.out({payload: descriptors})
+        })
+    }
+  };
+};
+module.exports = fn;
+},{}],3:[function(require,module,exports){
+var fn = function (def, parent)
+{
+  def.in = function(msg)
+  {
+    var deviceHandle = msg.payload.device
+    var characteristicHandle = msg.payload.characteristic
+    if(deviceHandle && serviceHandle && evothings && evothings.ble)
+    {
+      evothings.ble.descriptors(
+        deviceHandle,
+        characteristicHandle,
+        function(descriptors)
+        {
+          def.out({payload: {descriptors:descriptors}})
+        })
+    }
+  };
+};
+module.exports = fn;
+},{}],4:[function(require,module,exports){
+var fn = function (def, parent)
+{
+  def.in = function(msg)
+  {
+    var deviceHandle = msg.payload.device
+    var characteristicHandle = msg.payload.characteristic
+    var rv = undefined
+    if(deviceHandle && characteristicHandle && evothings && evothings.ble)
+    {
+      evothings.ble.readCharacteristic(
+        deviceHandle,
+        characteristicHandle,
+        function(data)
+        {
+          rv = escape(String.fromCharCode.apply(null, new Uint8Array(data)));
+          def.out({payload:{result: rv}})
+        },
+        function(errorCode)
+        {
+          rv = errorCode
+          def.out({payload:{error: errorCode}})
+        }
+      )
+    }
+  };
+};
+module.exports = fn;
+},{}],5:[function(require,module,exports){
+var fn = function (def, parent)
+{
+  def.in = function(msg)
+  {
+    var deviceHandle = msg.payload.device
+    var descriptorHandle = msg.payload.descriptor
+    var rv = undefined
+    if(deviceHandle && descriptorHandle && evothings && evothings.ble)
+    {
+      evothings.ble.readDescriptor(
+        deviceHandle,
+        descriptorHandle,
+        function(data)
+        {
+          def.out({payload: escape(String.fromCharCode.apply(null, new Uint8Array(data)))})
+        },
+        function(errorCode)
+        {
+          def.out({payload:{error: errorCode}})
+        }
+      );
+    }
+  };
+};
+module.exports = fn;
+},{}],6:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -23,7 +138,7 @@
 		};
 	};
 	module.exports = fn;
-},{}],2:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -39,10 +154,12 @@
 					if (r.state == 2) // connected
 					{
 						console.log('connected, requesting services...');
-						evothings.ble.readAllServiceData(deviceHandle, function (services)
-						{
-							def.out({payload: services});
-						});
+						evothings.ble.services(
+							deviceHandle,
+							function(services)
+							{
+								def.out({payload:{services: services}})
+							})
 					}
 				}, function (errorCode)
 				{
@@ -53,7 +170,7 @@
 		};
 	};
 	module.exports = fn;
-},{}],3:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 
 		var fn = function(def, parent)
 		{
@@ -74,7 +191,7 @@
 			return node;
 		};
 		module.exports = fn;
-},{}],4:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -92,7 +209,7 @@
 		}, false);
 	};
 	module.exports = fn;
-},{}],5:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -110,7 +227,7 @@
 		}
 	};
 	module.exports = fn;
-},{}],6:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -120,7 +237,7 @@
 		}
 	};
 	module.exports = fn;
-},{}],7:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -135,7 +252,7 @@
 
 	};
 	module.exports = fn;
-},{}],8:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -147,7 +264,7 @@
 		};
 	};
 	module.exports = fn;
-},{}],9:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -169,7 +286,7 @@
 		return node;
 	};
 	module.exports = fn;
-},{}],10:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -182,7 +299,7 @@
 
 	};
 	module.exports = fn;
-},{}],11:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -198,9 +315,9 @@
 		return node;
 	}
 	module.exports = fn;
-},{}],12:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 
-},{}],13:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -210,7 +327,7 @@
 		return node;
 	};
 	module.exports = fn;
-},{}],14:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 
 		var fn = function(def, parent)
 		{
@@ -223,7 +340,7 @@
 			return node;
 		};
 		module.exports = fn;
-},{}],15:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 
 	var fn = function (def, parent)
 	{
@@ -303,7 +420,7 @@
 		return node;
 	};
 	module.exports = fn;
-},{}],16:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 
 		var fn = function(def, parent)
 		{
@@ -314,14 +431,44 @@
 			return node;
 		};
 		module.exports = fn;
-},{}],17:[function(require,module,exports){
-arguments[4][12][0].apply(exports,arguments)
-},{"dup":12}],18:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
+
+console.dir(window.nrfeWidgets);
+},{}],23:[function(require,module,exports){
+app.sensortag = {};
+
+app.sensortag.ACCELEROMETER_SERVICE = 'f000aa10-0451-4000-b000-000000000000';
+app.sensortag.ACCELEROMETER_DATA = 'f000aa11-0451-4000-b000-000000000000';
+app.sensortag.ACCELEROMETER_CONFIG = 'f000aa12-0451-4000-b000-000000000000';
+app.sensortag.ACCELEROMETER_PERIOD = 'f000aa13-0451-4000-b000-000000000000';
+app.sensortag.ACCELEROMETER_NOTIFICATION = '00002902-0000-1000-8000-00805f9b34fb';
+
+app.sensortag.MAGNETOMETER_SERVICE = 'f000aa30-0451-4000-b000-000000000000';
+app.sensortag.MAGNETOMETER_DATA = 'f000aa31-0451-4000-b000-000000000000';
+app.sensortag.MAGNETOMETER_CONFIG = 'f000aa32-0451-4000-b000-000000000000';
+app.sensortag.MAGNETOMETER_PERIOD = 'f000aa33-0451-4000-b000-000000000000';
+app.sensortag.MAGNETOMETER_NOTIFICATION = '00002902-0000-1000-8000-00805f9b34fb';
+
+var fn = function (def, parent)
+{
+  def.in = function(msg)
+  {
+    var device = msg.payload
+    if(device && evothings && evothings.ble)
+    {
+
+    }
+  };
+};
+module.exports = fn;
+},{}],24:[function(require,module,exports){
 
 var widgets =
 {
 	page: require("./page"),
 	bleservices: require("./bleservices"),
+	blecharacteristics: require("./blecharacteristics"),
+	bledesccriptors: require("./bledescriptors"),
 	blescan: require("./blescan"),
 	button: require("./button"),
 	cdbattery: require("./cdbattery"),
@@ -334,8 +481,8 @@ var widgets =
 	picklist: require("./picklist"),
 	section: require("./section"),
 	fetemplate: require("./fetemplate"),
-	html: require("./html")
+	html: require("./html"),
+	tisensor: require('./tisensor')
 }
 module.exports = widgets
-},{"./blescan":1,"./bleservices":2,"./button":3,"./cdbattery":4,"./cdgeolocation":5,"./cdvibration":6,"./event":7,"./fefunction":8,"./fetemplate":9,"./html":10,"./image":11,"./input":13,"./page":14,"./picklist":15,"./section":16}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18])(18)
-});
+},{"./blecharacteristics":1,"./bledescriptors":3,"./blescan":6,"./bleservices":7,"./button":8,"./cdbattery":9,"./cdgeolocation":10,"./cdvibration":11,"./event":12,"./fefunction":13,"./fetemplate":14,"./html":15,"./image":16,"./input":18,"./page":19,"./picklist":20,"./section":21,"./tisensor":23}]},{},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]);

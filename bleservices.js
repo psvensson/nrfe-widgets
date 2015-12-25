@@ -13,10 +13,12 @@
 					if (r.state == 2) // connected
 					{
 						console.log('connected, requesting services...');
-						evothings.ble.readAllServiceData(deviceHandle, function (services)
-						{
-							def.out({payload: services});
-						});
+						evothings.ble.services(
+							deviceHandle,
+							function(services)
+							{
+								def.out({payload:{services: services}})
+							})
 					}
 				}, function (errorCode)
 				{
