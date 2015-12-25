@@ -435,6 +435,7 @@ module.exports = fn;
 
 console.dir(window.nrfeWidgets);
 },{}],23:[function(require,module,exports){
+var app = {}
 app.sensortag = {};
 
 app.sensortag.ACCELEROMETER_SERVICE = 'f000aa10-0451-4000-b000-000000000000';
