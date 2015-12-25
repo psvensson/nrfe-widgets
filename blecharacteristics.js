@@ -1,5 +1,6 @@
 var fn = function (def, parent)
 {
+  console.log('ble characteristics instantiated');
   def.in = function(msg)
   {
     var deviceHandle = msg.payload.device
