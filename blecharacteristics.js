@@ -11,6 +11,11 @@ var fn = function (def, parent)
         serviceHandle,
         function(characteristics)
         {
+          characteristics.forEach(function(ch)
+          {
+            ch.device = deviceHandle
+            ch.service = serviceHandle
+          })
           def.out({payload: {caracteristics: characteristics}})
         })
     }

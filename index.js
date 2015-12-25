@@ -12,6 +12,11 @@ var fn = function (def, parent)
         serviceHandle,
         function(characteristics)
         {
+          characteristics.forEach(function(ch)
+          {
+            ch.device = deviceHandle
+            ch.service = serviceHandle
+          })
           def.out({payload: {caracteristics: characteristics}})
         })
     }
@@ -159,6 +164,10 @@ module.exports = fn;
 							function(services)
 							{
 								console.log('got services')
+								services.forEach(function(service)
+								{
+									service.device = deviceHandle
+								})
 								def.out({payload:{services: services}})
 							})
 					}

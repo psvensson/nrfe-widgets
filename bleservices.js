@@ -18,6 +18,10 @@
 							function(services)
 							{
 								console.log('got services')
+								services.forEach(function(service)
+								{
+									service.device = deviceHandle
+								})
 								def.out({payload:{services: services}})
 							})
 					}
