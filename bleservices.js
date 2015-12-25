@@ -17,6 +17,7 @@
 							deviceHandle,
 							function(services)
 							{
+								console.log('got services')
 								def.out({payload:{services: services}})
 							})
 					}

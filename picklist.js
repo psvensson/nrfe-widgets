@@ -47,28 +47,31 @@
 
 		def.in = function(msg)
 		{
-			var item = msg.payload;
-			//console.log("---------------------- picklist population");
-			console.log(JSON.stringify(item));
-			if(item && item[idproperty] && !seenitems[item[idproperty]])
+			if(msg && msg.payload)
 			{
-				console.log('adding new row for item '+item[idproperty]);
-				seenitems[item[idproperty]] = item;
-				var tr = document.createElement('tr');
-				tbody.appendChild(tr);
-				tdef.forEach(function(p)
+				var item = msg.payload;
+				//console.log("---------------------- picklist population");
+				console.log(JSON.stringify(item));
+				if (item && item[idproperty] && !seenitems[item[idproperty]])
 				{
-					var td = document.createElement('td');
-					td.className="mdl-data-table__cell--non-numeric";
-					td.innerHTML = item[p];
-					tr.appendChild(td);
-				});
-				tr.addEventListener('click', function(e)
-				{
-					var p = {payload:item};
-					console.log('sending item '+JSON.stringify(p));
-					def.out(p);
-				});
+					console.log('adding new row for item ' + item[idproperty]);
+					seenitems[item[idproperty]] = item;
+					var tr = document.createElement('tr');
+					tbody.appendChild(tr);
+					tdef.forEach(function (p)
+					{
+						var td = document.createElement('td');
+						td.className = "mdl-data-table__cell--non-numeric";
+						td.innerHTML = item[p];
+						tr.appendChild(td);
+					});
+					tr.addEventListener('click', function (e)
+					{
+						var p = {payload: item};
+						console.log('sending item ' + JSON.stringify(p));
+						def.out(p);
+					});
+				}
 			}
 		};
 
