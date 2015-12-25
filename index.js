@@ -69,7 +69,7 @@ module.exports = fn;
 },{}],4:[function(require,module,exports){
 var fn = function (def, parent)
 {
-  console.log('============================================ble read charactersitcis instantiated');
+  console.log('============================================ble read characteristic instantiated');
   def.in = function(msg)
   {
     var deviceHandle = msg.payload.device
