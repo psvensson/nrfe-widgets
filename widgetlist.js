@@ -7,6 +7,7 @@ var widgets =
 	blereadcharacteristic: require("./blereadcharacteristic"),
 	bledesccriptors: require("./bledescriptors"),
 	blescan: require("./blescan"),
+	bleconnect: require("./bleconnect"),
 	button: require("./button"),
 	cdbattery: require("./cdbattery"),
 	cdgeolocation: require("./cdgeolocation"),
