@@ -7,9 +7,9 @@
 		{
 			if(msg && msg.payload)
 			{
-				console.log('template got message');
+				//console.log('template got message');
 				//console.dir(JSON.stringify(msg.payload));
-				dump(msg.payload);
+				//dump(msg.payload);
 				//console.log('template is '+def.template);
 				node.innerHTML = Mustache.render(def.template, msg.payload)
 			}
