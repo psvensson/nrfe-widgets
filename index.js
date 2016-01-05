@@ -4493,12 +4493,12 @@ var fn = function (def, parent)
 
   function initialiseSensorTag()
   {
-    if(def.type = "CC2541")
+    if(def.sensortype = "CC2541")
     {
       console.log('initializing sensor tag of type '+tisensortag.CC2541_BLUETOOTH_SMART)
       sensortag = tisensortag.createInstance(tisensortag.CC2541_BLUETOOTH_SMART)
     }
-    else if(def.type = "CC2650")
+    else if(def.sensortype = "CC2650")
     {
       console.log('initializing sensor tag of type '+tisensortag.CC2650_BLUETOOTH_SMART)
       sensortag = tisensortag.createInstance(tisensortag.CC2650_BLUETOOTH_SMART)
